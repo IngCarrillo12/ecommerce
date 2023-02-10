@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+}
+.container{
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.btn{
+  background-color: none;
+  padding: .5rem 2rem;
+  text-decoration: none;
+  text-align: center;
+}
+.p-search{
+	margin-bottom: 30px;
+	font-size: 22px;
+  text-align: start;
+}
+
+.p-search span{
+	font-weight: 700;
+  font-size: 1.4rem;
+}
+
+@media (max-width:768px){
+	.p-search{
+		margin-left: 15px;
+	}
+}

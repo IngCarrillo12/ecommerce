@@ -1,0 +1,19 @@
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
+    background-color: #f5f5f5;
+    border-radius: 25px;
+}
+.form-input{
+    padding: .2rem;
+    border: none;
+    outline: none;
+    background-color: #f5f5f5;
+    display: none;
+}
+.form-icon{
+    width: 24px;
+    height: 24px;
+}

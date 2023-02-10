@@ -1,0 +1,16 @@
+.header-slogan{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #464040;
+}
+.header-slogan span{
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.slogan-icon{
+    width: 30px;
+    height: 30px;
+    stroke: #2A7AE4;
+}

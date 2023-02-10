@@ -1,0 +1,70 @@
+.banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-image: url(https://img.freepik.com/foto-gratis/chica-linda-alegre-emocionada-divertida-que-participa-sorteo-impresionante-quiere-ganar-viaje-al-extranjero-apuntando-esquina-superior-izquierda-sonriendo-divertida-mirando-camara-emocionada-pie-fondo-blanco-alegre_176420-36933.jpg?w=740&t=st=1673222026~exp=1673222626~hmac=726452c6a93be2d0b421670befc67d6df5fa657cd62d17b3f04ef6fa18784fe3);
+    background-size:70% 90%;
+    background-position:right;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 250px;
+}
+.banner-info{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 300px;
+    padding: 1.2rem 2rem;
+}
+.info-title{
+    font-size: 1.5rem;
+    color: #2A7AE4;
+    font-weight: 700;
+}
+.info-description{
+    font-size: .8rem;
+    font-weight: 500;
+    color: #4e4d4d;
+}
+.btn-banner{
+    background-color: #2A7AE4;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #f5f5f5;
+}
+
+@media (min-width:768px){
+    .banner{
+        height: 350px;
+        justify-content:center;
+    }
+    .banner-info{
+        width: 400px;
+    }
+    .info-title{
+        font-size: 2.5rem;
+        color: #2A7AE4;
+        font-weight: 700;
+    }
+    .info-description{
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #4e4d4d;
+    }
+    .btn-banner{
+        background-color: #2A7AE4;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #f5f5f5;
+        padding: 1rem ;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .banner{
+        height: 600px;
+        justify-content:center;
+    }
+    .banner-info{
+        width: 600px;
+    }
+}
