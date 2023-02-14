@@ -8,10 +8,10 @@ import { CardForCategory } from '../components/CardCategoryProducts/CardForCateg
 export const HomePage = () => {
   const { listProducts } = useSelector(state => state.products);
   const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(GetProducts())
+ useEffect(() => {
+   dispatch(GetProducts())
   }, [dispatch])
-  
+
   return (<>
     <Banner/>
   <section className='container-productos'>

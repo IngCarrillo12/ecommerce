@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 const ProductsSlice = createSlice({
     name:'products',
-    initialState: {
-        listProducts: [],
+    initialState:{
+        listProducts: []
     },
     reducers:{
         initState(state, action){
@@ -12,10 +13,10 @@ const ProductsSlice = createSlice({
     }
 })
 export default ProductsSlice;
-export const productsSlice = ProductsSlice.actions
+export const { initState } = ProductsSlice.actions
 
 export const GetProducts = ()=> async(dispatch)=>{
     const res = await fetch('https://fakestoreapi.com/products')
     const data = await res.json()
-    dispatch(productsSlice.initState(data))
+    dispatch(initState(data))
 }

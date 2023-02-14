@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin: 2rem 0;
+    margin-top: 1rem;
 }
 .producto-img {
     display: flex;
@@ -51,3 +51,14 @@
     background-color: #2a7ae4;
     color: #f2f2f2;
 }
+.relatedProduts{
+    display: flex;
+    flex-direction: column;
+    margin: 0rem 1rem;
+}
+.relatedProduts-title{
+    font-size: 2rem;
+    font-weight: 600;
+    padding-left: 1rem;
+}
+

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { cartSlice } from '../../store/CartSlice'
 import './StyleCardProduct.css'
 
-export const CardViewProduct = ({id, image, title, price, description}) => {
+export const CardViewProduct = ({category, id, image, title, price, description}) => {
     const dispatch = useDispatch()
     const addCart = ()=>{
         dispatch(cartSlice.addToCart({id, price, title, image}))
