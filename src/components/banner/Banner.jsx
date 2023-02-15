@@ -7,7 +7,7 @@ export const Banner = () => {
     <div className="banner-info">
         <h4 className="info-title">Mejor Calidad Precio</h4>
         <p className="info-description">Encuentra Productos de la mejor calidad-precio Del Pais</p>
-        <Link className="btn btn-banner" to={"/productos"}>Ver Productos</Link>
+        <Link className="btn btn-banner" to={"/products"}>Ver Productos</Link>
     </div>
 </section>
   )

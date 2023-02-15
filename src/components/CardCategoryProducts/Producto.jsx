@@ -9,7 +9,7 @@ export const Producto = ({id,name,price,cover}) => {
           <img className="card-img" src={cover} alt={name} />
           </div>
           <p className="card-title">{name}</p>
-          <span className="card-precio">{price}</span>
+          <span className="card-precio">$ {price}</span>
           {/* <a  href={`/producto/${title}`} className="btn-card">Ver Producto</a> */}
           <Link to={`/product/${id}`} className='view-product' >Ver Producto</Link>
       </div>

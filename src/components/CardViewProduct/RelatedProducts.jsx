@@ -5,10 +5,9 @@ import Carousel from "react-multi-carousel";
 
 import "react-multi-carousel/lib/styles.css";
 
-export const RelatedProducts = ({ category }) => {
-    const { listProducts } = useSelector(state => state.products)
-    const relatedProducts = listProducts.filter(product => product.category === category)
-    console.log(relatedProducts)
+export const RelatedProducts = ({ category, idProduct }) => {
+    const { listProducts } = useSelector(state => state.productsState)
+    const relatedProducts = listProducts.filter(product =>((product.category.name === category) && (product.id !== idProduct)))
     const responsive = {
         superLargeDesktop: {
           breakpoint: { max: 4000, min: 3000 },
@@ -32,7 +31,7 @@ export const RelatedProducts = ({ category }) => {
         <h3 className='relatedProduts-title'>Productos Relacionados</h3>
      <Carousel responsive={responsive}>
             {
-                relatedProducts.map(product => <Producto id={product.id} cover={product.image} name={product.title} price={product.price} key={product.id} />)
+                relatedProducts.map(product => <Producto id={product.id} cover={product.images[0]} name={product.title} price={product.price} key={product.id} />)
             }
             </Carousel>
 

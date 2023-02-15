@@ -1,25 +1,34 @@
 import React, {useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-// import { Loader } from "../components/Loader"
-import { CardForCategory } from '../components/CardCategoryProducts/CardForCategory'
+import { Waveform } from '@uiball/loaders'
 import { useSelector } from "react-redux"
+import { ProductsCategory } from "../components/ProductsForCategory/ProductsCategory"
 
 export const PageCategory = () => {
-    const { listProducts } = useSelector(state => state.products)
-    const [Loading, setLoading] = useState(true)
+    const { listProducts, loading } = useSelector(state => state.productsState)
     const [Products, setProducts] = useState([])
     const {id} = useParams()
 
     useEffect(() => {
-        setProducts(listProducts.filter(product => product.category === id))
-        setLoading(!Loading)
-    }, [setLoading, setProducts, listProducts, id])
+        setProducts(listProducts.filter(product => product.category.name === id))
+    }, [id])
 
     return (
+        loading?(
+            <div style={{display:"flex", justifyContent:'center', alignItems:'center', height:'500px' , fontSize:'200px'}}>
+                <Waveform 
+                size={40}
+                lineWeight={3.5}
+                speed={1} 
+                color="black" 
+                />
+        </div>
+        ):(
         <div className='container-productos'>
         <section className="container productos">
-            <CardForCategory products={Products} category={id} />
+            <ProductsCategory products={Products} category={id} />
         </section>
         </div>
+    )
     )
 }

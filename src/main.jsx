@@ -6,19 +6,23 @@ import './index.css'
 import { Provider } from 'react-redux'
 import store from './store'
 import { BrowserRouter } from 'react-router-dom'
+import { PersistGate } from 'redux-persist/integration/react'
+import persistStore from 'redux-persist/es/persistStore'
 
 const domain = import.meta.env.VITE_APP_AUTH_DOMAIN
 const clientId  = import.meta.env.VITE_APP_AUTH_CLIENTID
-console.log(domain,' ',clientId)
+let persistor = persistStore(store)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+  <PersistGate persistor={persistor}>
+  <Provider store={ store }>
   <BrowserRouter>
-    <Provider store={ store }>
     <Auth0Provider domain={domain} clientId={clientId}  authorizationParams={{
       redirect_uri: window.location.origin
     }}>
     <App />
     </Auth0Provider>
-    </Provider> 
     </BrowserRouter>
+    </Provider> 
+    </PersistGate>
 )

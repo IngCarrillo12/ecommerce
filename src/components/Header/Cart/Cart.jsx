@@ -3,11 +3,10 @@ import { useSelector } from 'react-redux'
 import { OpenCar as CarritoAbierto } from './OpenCar'
 
 export const Cart = ({OpenCart, setOpenCart}) => {
-    const quantity = useSelector((state) => state.cart.totalQuantity)
-    const cartItems = useSelector((state) => state.cart.itemsList)
+    const quantity = useSelector((state) => state.cartState.totalQuantity)
+    const cartItems = useSelector((state) => state.cartState.itemsList)
     let total = 0
-    const itemsLists = useSelector((state) => state.cart.itemsList)
-    itemsLists.forEach((item) => {
+    cartItems.forEach((item) => {
       total += item.totalPrice
     })
     return (
@@ -27,7 +26,7 @@ export const Cart = ({OpenCart, setOpenCart}) => {
                 </div>
                 <div className='openCar-list'>
                 {cartItems.map(item=>(
-                    <CarritoAbierto id={item.id} image={item.image} title={item.title} price={item.price} totalPrice={item.totalPrice} quantity={item.quantity}  />
+                    <CarritoAbierto key={item.id} id={item.id} image={item.image} title={item.title} price={item.price} totalPrice={item.totalPrice} quantity={item.quantity}  />
                 ))}
                 </div>
                 <p className='total-pay' >Total: ${total}</p>

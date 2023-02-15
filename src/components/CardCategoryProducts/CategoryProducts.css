@@ -45,7 +45,7 @@
     height: 20px;
     color: #2A7AE4;
 }
-.categoria-cards{
+.grid-cards{
     display: grid;
     place-items: center;
     grid-template-columns: repeat(4, 1fr);

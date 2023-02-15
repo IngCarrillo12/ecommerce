@@ -1,17 +1,17 @@
 import React from 'react'
-import {cartSlice} from '../../../store/CartSlice'
+import { addToCart, removeFromCart} from '../../../store/CartSlice'
 import { useDispatch } from 'react-redux'
 
 export const OpenCar = ({id, image, title, price, quantity, totalPrice}) => {
   const dispatch = useDispatch()
   const incrementQuanty = ()=>{
-    dispatch(cartSlice.addToCart({id, title, price}))
+    dispatch(addToCart({id, title, price}))
   }
   const decrementQuanty = ()=>{
-    dispatch(cartSlice.removeFromCart(id))
+    dispatch(removeFromCart(id))
   }
   const removeCart = () =>{
-    dispatch(cartSlice.removeFromCart(id))
+    dispatch(removeFromCart(id))
   }
 
   return (
@@ -27,7 +27,7 @@ export const OpenCar = ({id, image, title, price, quantity, totalPrice}) => {
                 <p className='info-totalPrice'>${totalPrice}</p>
             </div>
         </div>
-        <svg onClick={()=>removeCart()} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="icon-delete">
+        <svg onClick={()=>removeCart()} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="icon-delete">
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
       </svg>
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Slogan } from './Slogan/Slogan'
 import { Form } from './Form/Form'
 import { Outlet} from 'react-router-dom'
