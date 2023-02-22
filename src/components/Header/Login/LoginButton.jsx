@@ -1,9 +1,15 @@
-import { useAuth0 } from '@auth0/auth0-react';
+
 import React from 'react'
 
+
 export default function LoginButton() {
-    const { loginWithRedirect } = useAuth0();
+
+    const openModal = ()=>{
+    const modal =  document.querySelector('.modal')
+    modal.style.visibility = 'visible'
+    modal.style.opacity = '1'
+    }
   return (
-    <button onClick={loginWithRedirect} className='btn-login' >Login</button>
+    <button onClick={()=>openModal()} className='btn-login' >Login</button>
   )
 }

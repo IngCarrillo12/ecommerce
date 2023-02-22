@@ -4,6 +4,7 @@ import { CardForCategory } from '../components/CardCategoryProducts/CardForCateg
 import { Waveform } from '@uiball/loaders'
 import { useEffect } from 'react'
 import { GetProducts } from '../store/ProductsSlice'
+import {Auth} from '../components/Auth/Auth'
 
 export const HomePage = () => {
   const { listProducts, loading } = useSelector(state => state.productsState);
@@ -36,7 +37,7 @@ export const HomePage = () => {
   </>
     )
   }
-    
+    <Auth/>
   </>
   )
 }
